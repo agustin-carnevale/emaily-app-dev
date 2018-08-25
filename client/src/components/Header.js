@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import logo from '../logo.png';
-import './Header.css';
 import Payments from './Payments';
 
 class HeaderBar extends Component{
@@ -23,20 +21,15 @@ class HeaderBar extends Component{
 
     render() {
         return (
-            <React.Fragment>
-            <header className="App-header">
-                <Link to={ this.props.auth? '/surveys':'/'}><img src={logo} className="App-logo" alt="logo" /></Link>
-            </header>
             <nav>
                 <div className="nav-wrapper">
                     <Link to={ this.props.auth?  '/surveys':'/'} className="left brand-logo">
                     <i className="material-icons">apps</i>EMAILY</Link>
-                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                    <ul className="right">
                         {this.renderContent()}
                     </ul>
                 </div>
             </nav>
-            </React.Fragment>
         );
     }
 }
